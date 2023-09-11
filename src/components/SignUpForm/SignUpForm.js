@@ -20,7 +20,9 @@ function SignUpForm(){
         })
     }
 
-    const handleSubmit = ()=>{
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        console.log(formData)
 
     }
 
