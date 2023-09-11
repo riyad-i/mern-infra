@@ -6,9 +6,13 @@ const logger = require('morgan')
 
 const app = express()
 const PORT = process.env.PORT || 3001
+require('dotenv').config()
+require('./config/database') //runs right away
 
 app.use(logger('dev'))
 app.use(express.json())
+
+
 
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
