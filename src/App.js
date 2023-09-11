@@ -11,7 +11,7 @@ function App() {
   const [user, setUser] = useState({});
 
   return (
-    <div className="App">
+    <main className="App">
       {user ? (
         <>
         <NavBar/>
@@ -21,7 +21,7 @@ function App() {
         </Routes>
         </>
       ) : <AuthPage />}
-    </div>
+    </main>
   )
 }
 

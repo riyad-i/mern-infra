@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom"
+
 
 function NavBar(){
     return(
         <nav>
-            <h3>navbar</h3>
+            <Link to={'/orders'}>Order History</Link>
+            &nbsp; | &nbsp;
+            <Link to={'orders/new'}>New Order</Link>
         </nav>
     )
 }
