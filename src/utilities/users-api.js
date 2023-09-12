@@ -11,7 +11,7 @@ export async function signUp(userData){
     })
 
     if (res.ok){
-        return res.json()
+        return await res.json()
     }else{
         throw new Error('Invalid Sign Up')
     }
