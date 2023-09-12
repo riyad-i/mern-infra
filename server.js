@@ -21,6 +21,12 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 
 
+app.use('/api/users', require('./routes/api/users'))
+
+
+
+
+
 
 
 // The following "catch all" route (note the *) is necessary

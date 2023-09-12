@@ -2,6 +2,9 @@ import { useState } from "react"
 import {signUp} from "../../utilities/users-service"
 
 
+
+//SignUpForm.jsx <--> users-service.js <--> users-api.js <-Internet-> server.js (Express)
+
 function SignUpForm(){
     const [formData, setFormData] = useState({
         name: '',
