@@ -39,6 +39,7 @@ userSchema.pre('save', async function(next){
     if (!this.isModified('password')) return next()
     //update pass with computed hash
     this.password = await bcrypt.hash(this.password, SALT_ROUNDS)
+    return next()
 })
 
 

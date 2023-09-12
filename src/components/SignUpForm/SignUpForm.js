@@ -34,6 +34,7 @@ function SignUpForm(){
             console.log(userFormData);
             
             const user = await signUp(userFormData)
+            console.log(user);
         } catch (err) {
             console.log(err);
             setFormData({
