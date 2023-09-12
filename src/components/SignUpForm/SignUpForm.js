@@ -1,4 +1,6 @@
 import { useState } from "react"
+import {signUp} from "../../utilities/users-service"
+
 
 function SignUpForm(){
     const [formData, setFormData] = useState({
@@ -23,11 +25,12 @@ function SignUpForm(){
     const handleSubmit = async (e)=>{
         e.preventDefault()
         try {
-            console.log(formData)
             const userFormData = {...formData}
             delete userFormData.error
             delete userFormData.confirm
             console.log(userFormData);
+            
+            const user = await signUp(userFormData)
         } catch (err) {
             console.log(err);
             setFormData({
