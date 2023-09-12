@@ -11,12 +11,12 @@ import { getUser } from "./utilities/users-service";
 
 function App() {
   const [user, setUser] = useState(getUser());
-
+  console.log(user);
   return (
     <main className="App">
       {user ? (
         <>
-        <NavBar/>
+        <NavBar user={user}/>
         <Routes>
           <Route path='orders/new' element={<NewOrderPage/>}/>
           <Route path='orders' element={<OrderHistoryPage/>}/>
