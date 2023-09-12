@@ -12,7 +12,7 @@ function SignUpForm(){
     const disable = formData.password !== formData.confirm
 
     const handleChange = (e)=>{
-        console.log(e);
+        // console.log();
         setFormData({
             ...formData,
             [e.target.name] : e.target.value,
@@ -20,15 +20,27 @@ function SignUpForm(){
         })
     }
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = async (e)=>{
         e.preventDefault()
-        console.log(formData)
+        try {
+            console.log(formData)
+            const userFormData = {...formData}
+            delete userFormData.error
+            delete userFormData.confirm
+            console.log(userFormData);
+        } catch (err) {
+            console.log(err);
+            setFormData({
+                ...formData,
+                error: 'Sign Up Failed - Try Again'
+            })
+        }
 
     }
 
     return(
         <div>
-            <div className="form-container">
+            <div className="form-container" method="post">
                 <form autoComplete="off" onSubmit={handleSubmit}>
                     <label>Name</label>
                     <input type="text" name="name" value={formData.name} onChange={handleChange} required/>
@@ -42,7 +54,7 @@ function SignUpForm(){
                     <label>Confirm Password</label>
                     <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required/>
 
-                    <button disabled={disable}>Sign Up</button>
+                    <button type='submit' disabled={disable}>Sign Up</button>
                 </form>
             </div>
             <p className="error-message">{formData.error}</p>
