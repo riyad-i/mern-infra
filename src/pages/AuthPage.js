@@ -6,7 +6,7 @@ function AuthPage({setUser}){
         <div>
             <h1>Auth Page</h1>
             <SignUpForm setUser={setUser}/>
-            <LoginForm/>
+            <LoginForm setUser={setUser}/>
         </div>
     )
 }
