@@ -60,7 +60,9 @@ export function getUser() {
 
 
 
-
+export async function checkToken(){
+    alert('clicked')
+}
 
 
 
