@@ -5,7 +5,7 @@ import {signUp} from "../../utilities/users-service"
 
 //SignUpForm.jsx <--> users-service.js <--> users-api.js <-Internet-> server.js (Express)
 
-function SignUpForm(){
+function SignUpForm({setUser}){
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -35,6 +35,7 @@ function SignUpForm(){
             
             const user = await signUp(userFormData)
             console.log(user);
+            setUser(user)
         } catch (err) {
             console.log(err);
             setFormData({
