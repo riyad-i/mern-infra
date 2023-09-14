@@ -26,6 +26,15 @@ function createJWT(user){
 
 
 
+async function login(req, res){
+    //find user by email
+    //compare password with hashed password
+    //create token
+}
+
+
+
 module.exports = {
-    create
+    create,
+    login
 }
