@@ -8,6 +8,11 @@ export function login(credentials) {
   return sendRequest(`${BASE_URL}/login`, 'POST', credentials);
 }
 
+export function checkToken(){
+    return sendRequest(`${BASE_URL}/check-token`)
+}
+
+
 /*--- Helper Functions ---*/
 
 async function sendRequest(url, method = 'GET', payload = null) {
