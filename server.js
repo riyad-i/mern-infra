@@ -9,9 +9,11 @@ const PORT = process.env.PORT || 3001
 require('dotenv').config()
 require('./config/database') //runs right away
 
+//middleware
 app.use(logger('dev'))
 app.use(express.json())
-
+//check for token and create req.user property in request
+app.use(require('./config/checkToken'))
 
 
 // Configure both serve-favicon & static middleware
