@@ -6,12 +6,24 @@ export async function signUp(userData){
     const token = await usersAPI.signUp(userData)
     localStorage.setItem('token', token) //storing automatically converts to string, vice versa not true
     return getUser()
-    // return token
+
+
     // Delegate the network request code to the users-api.js API module
     // which will ultimately return a JSON Web Token (JWT)
 
     //Note: We have not used a try/catch block because any error will propagate up to the "consumer" of the service - in this case the consumer is the handleSubmit method in the <SignUpForm> component.
 }
+
+
+
+export async function logOut(){
+    localStorage.removeItem('token')
+}
+
+
+
+
+
 
 
 
