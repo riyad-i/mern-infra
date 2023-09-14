@@ -5,7 +5,8 @@ export async function signUp(userData){
     console.log('user data', userData);
     const token = await usersAPI.signUp(userData)
     localStorage.setItem('token', token) //storing automatically converts to string, vice versa not true
-    return token
+    return getUser()
+    // return token
     // Delegate the network request code to the users-api.js API module
     // which will ultimately return a JSON Web Token (JWT)
 
