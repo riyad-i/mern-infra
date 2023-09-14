@@ -61,7 +61,8 @@ export function getUser() {
 
 
 export async function checkToken(){
-    alert('clicked')
+    const dateString = await usersAPI.checkToken()
+    return new Date(dateString)
 }
 
 
